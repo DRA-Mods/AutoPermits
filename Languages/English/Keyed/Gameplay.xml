@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Auto permit dialog -->
+    <AP_AutoPermitTitle>Auto permit configuration</AP_AutoPermitTitle>
+    <!-- Don't make too long or it won't fit in the dialog -->
+    <AP_AutoPermitExplanation>Permits will be used (if possible) the moment their cooldown ends</AP_AutoPermitExplanation>
+    <AP_UseOnCaravan>Use when caravaning</AP_UseOnCaravan>
+    <AP_UseOnCaravan_Tooltip>If enabled the permits will be automatically used for pawns on caravans (if caravan weight capacity will allow).</AP_UseOnCaravan_Tooltip>
+    <AP_ColonyMapsOnly>Only use on colony maps</AP_ColonyMapsOnly>
+    <AP_ColonyMapsOnly_Tooltip>If enabled the permits will only be used on maps that are considered player colonies. If disabled the permits may get triggered when raiding hostile camps or on quest maps.</AP_ColonyMapsOnly_Tooltip>
+    <AP_NoValidPermits>{PAWN_nameDef} has no permits that can be automatically used.</AP_NoValidPermits>
+    <AP_TriggerAllPermits>Trigger all enabled permits</AP_TriggerAllPermits>
+
+    <!-- Permit use float menu -->
+    <AP_ConfigurePermits>Configure permits</AP_ConfigurePermits>
+
+    <!-- Caravan pawn picker float menu -->
+    <!-- Same text as AP_AutoPermitTitle, added as separate option in case needed for different languages (or text ends up changed in the future). -->
+    <AP_AutoPermitForPawnTitle>Auto permit configuration</AP_AutoPermitForPawnTitle>
+    <AP_AutoPermitForPawnOption>Configure for {PAWN_nameDef}</AP_AutoPermitForPawnOption>
+    <!-- Just in case, a fallback message if there's no pawns with valid permits. Shouldn't happen, but exists just in case. -->
+    <AP_AutoPermitForPawnNoOptions>No configurable permits</AP_AutoPermitForPawnNoOptions>
+
+</LanguageData>

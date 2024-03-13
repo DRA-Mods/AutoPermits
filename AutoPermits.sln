@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E702E122-DE0C-46E9-99EA-C7E1B93325AC}") = "AutoPermits", "Source\AutoPermits.csproj", "{9A66BB50-27BF-44CE-A066-A0B896F5ADEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A66BB50-27BF-44CE-A066-A0B896F5ADEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A66BB50-27BF-44CE-A066-A0B896F5ADEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A66BB50-27BF-44CE-A066-A0B896F5ADEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A66BB50-27BF-44CE-A066-A0B896F5ADEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BA98620-F452-4839-8359-02EB92C50073}
+	EndGlobalSection
+EndGlobal
