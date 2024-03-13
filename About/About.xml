@@ -17,7 +17,10 @@ On top of deciding which permits will be used you can also decide if the permits
 
 The permits will only be used the moment their cooldown ends - assuming that your colonist would be able to call permits at the time (so they're concious, not in cryptosleep pod, etc.) - so you'll need to use them for the first time, and then they'll be sent automatically afterwards. Please note, resources won't be sent to caravans if it would put them over their carry capacity.
 
-Includes compat for Vanilla Factions Expanded - Empire (stone drop needs special handling). Should be compatible with Trade Ships Drop Spot by Smash Phil - the resources should drop on the spot added by the mod.
+Should be compatible with:
+- Vanilla Factions Expanded - Empire - stone drop needs special handling
+- Zetrith's Multiplayer - the new menus are handled properly when in Multiplayer mode
+- Trade Ships Drop Spot by Smash Phil - the resources should drop on the spot added by the mod
   </description>
   <modDependencies>
     <li>
