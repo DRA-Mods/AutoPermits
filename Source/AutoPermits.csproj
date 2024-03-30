@@ -5,7 +5,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>12.0</LangVersion>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <OutputPath>..\1.4\Assemblies\</OutputPath>
+        <OutputPath>..\1.5\Assemblies\</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
         <DebugType>portable</DebugType>
@@ -20,8 +20,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3901" />
-        <PackageReference Include="Lib.Harmony" Version="2.2.2" ExcludeAssets="runtime" />
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4048-beta" />
+        <PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" />
         <PackageReference Include="RimWorld.MultiplayerAPI" Version="0.5.0" />
         <PackageReference Include="Zetrith.Prepatcher" Version="1.2.0" />
     </ItemGroup>

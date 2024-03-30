@@ -4,8 +4,12 @@
   <name>AutoPermits</name>
   <supportedVersions>
     <li>1.4</li>
+    <li>1.5</li>
   </supportedVersions>
-  <author>Sokyran, Hush</author>
+  <authors>
+    <li>Sokyran</li>
+    <li>Hush</li>
+  </authors>
   <description>
 Do you like my mods? You can support me on Ko-Fi: https://ko-fi.com/sokyran
 
