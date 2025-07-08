@@ -10,7 +10,7 @@ using Verse;
 
 namespace AutoPermits.HarmonyPatches;
 
-[HarmonyPatch(typeof(Pawn_RoyaltyTracker), nameof(Pawn_RoyaltyTracker.RoyaltyTrackerTick))]
+[HarmonyPatch(typeof(Pawn_RoyaltyTracker), nameof(Pawn_RoyaltyTracker.RoyaltyTrackerTickInterval))]
 public static class InterceptPermitCooldownMessage
 {
     private static void Replacement(string text, LookTargets lookTargets, MessageTypeDef def, bool historical, FactionPermit permit)

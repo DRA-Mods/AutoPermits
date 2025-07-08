@@ -6,7 +6,7 @@ using Verse;
 
 namespace AutoPermits.HarmonyPatches;
 
-[HarmonyPatch(typeof(Pawn_RoyaltyTracker), nameof(Pawn_RoyaltyTracker.RoyaltyTrackerTick))]
+[HarmonyPatch(typeof(Pawn_RoyaltyTracker), nameof(Pawn_RoyaltyTracker.RoyaltyTrackerTickInterval))]
 public static class CaravanPermitUse
 {
     public static void Postfix(Pawn_RoyaltyTracker __instance)
