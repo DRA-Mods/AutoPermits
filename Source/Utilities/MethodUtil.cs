@@ -103,9 +103,9 @@ public static class MethodUtil
                     && (cur = m.DeclaringType?.Name) != null)
                 {
                     if (cur.StartsWith(DisplayClassPrefix))
-                        return int.Parse(cur.Substring(DisplayClassPrefix.Length).Until('_'));
+                        return int.Parse(cur[DisplayClassPrefix.Length..].Until('_'));
                     if (cur.Contains(EnumerableStateMachineInfix))
-                        return int.Parse(cur.After('>').Substring(EnumerableStateMachineInfix.Length));
+                        return int.Parse(cur.After('>')[EnumerableStateMachineInfix.Length..]);
                 }
                 // Example method names: <FillTab>b__10_0 or <DoWindowContents>g__Start|55_1
                 else if (
@@ -117,7 +117,7 @@ public static class MethodUtil
                     && cur.After('>').CharacterCount('_') == 3)
                 {
                     if (cur.Contains(LambdaMethodInfix))
-                        return int.Parse(cur.After('>').Substring(LambdaMethodInfix.Length).Until('_'));
+                        return int.Parse(cur.After('>')[LambdaMethodInfix.Length..].Until('_'));
                     if (cur.Contains(LocalFunctionInfix))
                         return int.Parse(cur.After('|').Until('_'));
                 }
@@ -139,19 +139,19 @@ public static class MethodUtil
         switch (methodType)
         {
             case MethodType.Normal:
-                if (methodName == null)
+                if (methodName.NullOrEmpty())
                     return null;
                 return AccessTools.DeclaredMethod(type, methodName, args);
 
             case MethodType.Getter:
-                if (methodName == null)
-                    return null;
-                return AccessTools.DeclaredProperty(type, methodName).GetGetMethod(true);
+                if (methodName.NullOrEmpty())
+                    return AccessTools.DeclaredIndexerGetter(type, args);
+                return AccessTools.DeclaredPropertyGetter(type, methodName);
 
             case MethodType.Setter:
-                if (methodName == null)
-                    return null;
-                return AccessTools.DeclaredProperty(type, methodName).GetSetMethod(true);
+                if (methodName.NullOrEmpty())
+                    return AccessTools.DeclaredIndexerSetter(type, args);
+                return AccessTools.DeclaredPropertySetter(type, methodName);
 
             case MethodType.Constructor:
                 return AccessTools.DeclaredConstructor(type, args);
@@ -162,9 +162,14 @@ public static class MethodUtil
                     .FirstOrDefault(c => c.IsStatic);
 
             case MethodType.Enumerator:
-                if (methodName == null)
+                if (methodName.NullOrEmpty())
                     return null;
                 return AccessTools.EnumeratorMoveNext(AccessTools.DeclaredMethod(type, methodName, args));
+
+            case MethodType.Async:
+                if (methodName.NullOrEmpty())
+                    return null;
+                return AccessTools.AsyncMoveNext(AccessTools.DeclaredMethod(type, methodName, args));
         }
 
         return null;
@@ -172,16 +177,18 @@ public static class MethodUtil
 
     private static string After(this string s, char c)
     {
-        if (s.IndexOf(c) == -1)
-        return s.Substring(s.IndexOf(c) + 1);
+        var index = s.IndexOf(c);
+        if (index == -1)
             throw new ArgumentException($"[{AutoPermitsModCore.ModName}] - Char {c} not found in string {s}");
+        return s[(index + 1)..];
     }
 
     private static string Until(this string s, char c)
     {
-        if (s.IndexOf(c) == -1)
-        return s.Substring(0, s.IndexOf(c));
+        var index = s.IndexOf(c);
+        if (index == -1)
             throw new ArgumentException($"[{AutoPermitsModCore.ModName}] - Char {c} not found in string {s}");
+        return s[..index];
     }
 
     private static MethodInfo[] GetDeclaredMethods(this Type type)
