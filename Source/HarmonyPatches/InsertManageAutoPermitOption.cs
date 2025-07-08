@@ -40,7 +40,7 @@ public static class InsertManageAutoPermitOption
     {
         var locals = baseMethod.GetMethodBody()?.LocalVariables;
         if (locals == null)
-            throw new Exception($"Trying to patch a method without a body: {baseMethod.GetNameWithNamespace()}");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Trying to patch a method without a body: {baseMethod.GetNameWithNamespace()}");
 
         var insertion = MethodUtil.MethodOf(InsertOption);
         var index = locals.FirstOrDefault(l => l.LocalType == typeof(List<FloatMenuOption>))?.LocalIndex ?? -1;

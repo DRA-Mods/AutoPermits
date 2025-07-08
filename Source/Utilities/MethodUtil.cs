@@ -21,7 +21,7 @@ public static class MethodUtil
     {
         var parent = GetMethod(parentType, parentMethod, parentMethodType, parentArgs);
         if (parent == null)
-            throw new Exception($"Couldn't find parent method ({parentMethodType}) {parentType}::{parentMethod}");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Couldn't find parent method ({parentMethodType}) {parentType}::{parentMethod}");
 
         var parentId = GetMethodDebugId(parent);
 
@@ -48,7 +48,7 @@ public static class MethodUtil
             lambda = AccessTools.Method(sharedDisplayClass, lambdaNameFull);
 
         if (lambda == null)
-            throw new Exception($"Couldn't find lambda {lambdaOrdinal} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Couldn't find lambda {lambdaOrdinal} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
 
         return lambda;
     }
@@ -57,7 +57,7 @@ public static class MethodUtil
     {
         var parent = GetMethod(parentType, parentMethod, parentMethodType, parentArgs);
         if (parent == null)
-            throw new Exception($"Couldn't find parent method ({parentMethodType}) {parentType}::{parentMethod}");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Couldn't find parent method ({parentMethodType}) {parentType}::{parentMethod}");
 
         var parentId = GetMethodDebugId(parent);
 
@@ -78,10 +78,10 @@ public static class MethodUtil
             .ToArray();
 
         if (candidates.Length == 0)
-            throw new Exception($"Couldn't find local function {localFunc} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Couldn't find local function {localFunc} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
 
         if (candidates.Length > 1)
-            throw new Exception($"Ambiguous local function {localFunc} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Ambiguous local function {localFunc} in parent method {parentType}::{parent.Name} (parent method id: {parentId})");
 
         return candidates[0];
     }
@@ -125,10 +125,10 @@ public static class MethodUtil
         }
         catch (Exception e)
         {
-            throw new Exception($"Extracting debug id for {method.DeclaringType}::{method.Name} failed at {cur} with: {e.Message}");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Extracting debug id for {method.DeclaringType}::{method.Name} failed at {cur} with: {e.Message}");
         }
 
-        throw new Exception($"Couldn't determine debug id for parent method {method.DeclaringType}::{method.Name}");
+        throw new Exception($"[{AutoPermitsModCore.ModName}] - Couldn't determine debug id for parent method {method.DeclaringType}::{method.Name}");
     }
 
     // Copied from Harmony.PatchProcessor
@@ -173,15 +173,15 @@ public static class MethodUtil
     private static string After(this string s, char c)
     {
         if (s.IndexOf(c) == -1)
-            throw new ArgumentException($"Char {c} not found in string {s}");
         return s.Substring(s.IndexOf(c) + 1);
+            throw new ArgumentException($"[{AutoPermitsModCore.ModName}] - Char {c} not found in string {s}");
     }
 
     private static string Until(this string s, char c)
     {
         if (s.IndexOf(c) == -1)
-            throw new ArgumentException($"Char {c} not found in string {s}");
         return s.Substring(0, s.IndexOf(c));
+            throw new ArgumentException($"[{AutoPermitsModCore.ModName}] - Char {c} not found in string {s}");
     }
 
     private static MethodInfo[] GetDeclaredMethods(this Type type)

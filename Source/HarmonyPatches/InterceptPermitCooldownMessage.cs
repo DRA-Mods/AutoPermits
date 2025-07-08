@@ -23,7 +23,7 @@ public static class InterceptPermitCooldownMessage
     {
         var locals = baseMethod.GetMethodBody()?.LocalVariables;
         if (locals == null)
-            throw new Exception($"Trying to patch a method without a body: {baseMethod.GetNameWithNamespace()}");
+            throw new Exception($"[{AutoPermitsModCore.ModName}] - Trying to patch a method without a body: {baseMethod.GetNameWithNamespace()}");
 
         var target = AccessTools.DeclaredMethod(typeof(Messages), nameof(Messages.Message), [typeof(string), typeof(LookTargets), typeof(MessageTypeDef), typeof(bool)]);
         var replacement = MethodUtil.MethodOf(Replacement);
