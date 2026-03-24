@@ -27,38 +27,20 @@ Should be compatible with:
 - Zetrith's Multiplayer - the new menus are handled properly when in Multiplayer mode
 - Trade Ships Drop Spot by Smash Phil - the resources should drop on the spot added by the mod
   </description>
-  <modDependenciesByVersion>
-    <v1.6>
-      <li>
-        <packageId>jikulopo.prepatcher</packageId>
-        <displayName>Prepatcher</displayName>
-        <steamWorkshopUrl>steam://url/CommunityFilePage/3563469557</steamWorkshopUrl>
-        <alternativePackageIds IgnoreIfNoMatchingField="True">
-          <li>zetrith.prepatcher</li>
-        </alternativePackageIds>
-      </li>
-    </v1.6>
-    <v1.5>
-      <li>
-        <packageId>zetrith.prepatcher</packageId>
-        <displayName>Prepatcher</displayName>
-        <steamWorkshopUrl>steam://url/CommunityFilePage/2934420800</steamWorkshopUrl>
-      </li>
-    </v1.5>
-    <v1.4>
-      <li>
-        <packageId>zetrith.prepatcher</packageId>
-        <displayName>Prepatcher</displayName>
-        <steamWorkshopUrl>steam://url/CommunityFilePage/2934420800</steamWorkshopUrl>
-      </li>
-    </v1.4>
-  </modDependenciesByVersion>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
       <displayName>Harmony</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+    <li>
+      <packageId>zetrith.prepatcher</packageId>
+      <displayName>Prepatcher</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2934420800</steamWorkshopUrl>
+      <alternativePackageIds IgnoreIfNoMatchingField="True">
+        <li>jikulopo.prepatcher</li>
+      </alternativePackageIds>
     </li>
     <li>
       <packageId>Ludeon.RimWorld.Royalty</packageId>
