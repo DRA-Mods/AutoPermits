@@ -13,7 +13,7 @@ public static class PermitUtil
 {
     private static readonly Type StoneDropType;
     private static readonly AccessTools.FieldRef<RoyalTitlePermitWorker_Targeted, Faction> StoneDropFactionField;
-    private static readonly ThingDef RoyalPermitDropSpot = DefDatabase<ThingDef>.GetNamedSilentFail("");
+    // private static readonly ThingDef RoyalPermitDropSpot = DefDatabase<ThingDef>.GetNamedSilentFail("");
 
     static PermitUtil()
     {
@@ -121,14 +121,14 @@ public static class PermitUtil
         targetedPermit.map = pawn.Map;
         targetedPermit.free = true;
 
-        targetedPermit.OrderForceTarget(GetDropSpot(pawn.Map) ?? DropCellFinder.TradeDropSpot(pawn.Map));
+        targetedPermit.OrderForceTarget(/*GetDropSpot(pawn.Map) ?? */DropCellFinder.TradeDropSpot(pawn.Map));
         return true;
     }
 
-    public static IntVec3? GetDropSpot(Map map)
-    {
-        if (RoyalPermitDropSpot == null)
-            return null;
-        return map.listerThings.ThingsOfDef(RoyalPermitDropSpot).FirstOrDefault()?.Position;
-    }
+    // public static IntVec3? GetDropSpot(Map map)
+    // {
+    //     if (RoyalPermitDropSpot == null)
+    //         return null;
+    //     return map.listerThings.ThingsOfDef(RoyalPermitDropSpot).FirstOrDefault()?.Position;
+    // }
 }
